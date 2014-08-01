@@ -82,9 +82,9 @@ module JavaBuildpack
         candidate = []
         #candidate << main_method(candidates)
         #candidate << non_pogo(candidates)
-        #candidate << shebang(candidates)#
+        #candidate << shebang(candidates)
 
-        #candidate = Set.new(candidate.flatten.compact).to_a
+        candidate = Set.new(candidate.flatten.compact).to_a
         candidate.size == 1 ? candidate[0] : nil
       end
 
