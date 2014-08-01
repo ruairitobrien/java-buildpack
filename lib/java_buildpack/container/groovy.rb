@@ -80,12 +80,12 @@ module JavaBuildpack
         candidates = JavaBuildpack::Util::GroovyUtils.groovy_files(@application)
 
         candidate = []
-        #candidate << main_method(candidates)
-        #candidate << non_pogo(candidates)
-        #candidate << shebang(candidates)
+        candidate << main_method(candidates)
+        candidate << non_pogo(candidates)
+        candidate << shebang(candidates)
 
         candidate = Set.new(candidate.flatten.compact).to_a
-        candidate.size == 1 ? candidate[0] : nil
+        nil
       end
 
       def other_groovy
